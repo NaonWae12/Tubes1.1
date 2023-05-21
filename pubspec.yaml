@@ -72,6 +72,12 @@ flutter:
     - assets/c.png
     - assets/js.png
     - assets/Trash.png
+    - assets/Vector.png
+    - assets/icon _right.png
+    - assets/Left.png
+    - assets/centang.png
+    - assets/VHome.png
+    - assets/penanda.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

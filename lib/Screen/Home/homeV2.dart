@@ -23,7 +23,7 @@ class _HomepageState extends State<Homepage> {
     CategoryPage(),
     ChartPage(),
     NotivicationPage(),
-    PageProfile(),
+    Profile(),
   ];
   void _onItemTapped(int index) {
     setState(() {
