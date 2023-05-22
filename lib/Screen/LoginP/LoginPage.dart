@@ -4,7 +4,13 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:unit3c_3/Screen/Register/RegisterPage.dart';
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
+  @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+  int selectedRole = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -75,37 +81,27 @@ class LoginPage extends StatelessWidget {
                       height: 45,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
-                        color: Color.fromARGB(255, 125, 123, 123),
+                        color: selectedRole == 1
+                            ? Color.fromARGB(255, 103, 100, 100)
+                            : Color.fromARGB(255, 223, 217, 217),
                       ),
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          primary: Colors
-                              .transparent, // Menghapus warna latar belakang ElevatedButton
-                          elevation: 0, // Menghapus bayangan ElevatedButton
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              'Participant',
-                              style: GoogleFonts.quicksand().copyWith(
-                                color: Colors
-                                    .white, // Mengubah warna teks menjadi putih
-                                fontSize: 16, // Mengubah ukuran font teks
-                                fontWeight: FontWeight
-                                    .bold, // Mengatur gaya huruf italic
-                              ),
-                            ),
-                          ],
-                        ),
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => RegisterPage(),
-                            ),
-                          );
+                      child: InkWell(
+                        onTap: () {
+                          setState(() {
+                            selectedRole = 1;
+                          });
                         },
+                        child: Container(
+                          alignment: Alignment.center,
+                          child: Text(
+                            'Participant',
+                            style: TextStyle(
+                              color: Color.fromARGB(255, 0, 0, 0),
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
                       ),
                     ),
                     Container(
@@ -113,32 +109,27 @@ class LoginPage extends StatelessWidget {
                       height: 45,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
-                        color: Color.fromARGB(255, 187, 184, 184),
+                        color: selectedRole == 2
+                            ? Color.fromARGB(255, 103, 100, 100)
+                            : Color.fromARGB(255, 223, 217, 217),
                       ),
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          primary: Colors
-                              .transparent, // Menghapus warna latar belakang ElevatedButton
-                          elevation: 0, // Menghapus bayangan ElevatedButton
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              'Mentor',
-                              style: GoogleFonts.quicksand().copyWith(
-                                color: Color.fromARGB(255, 50, 50,
-                                    50), // Mengubah warna teks menjadi putih
-                                fontSize: 16, // Mengubah ukuran font teks
-                                fontWeight: FontWeight
-                                    .bold, // Mengatur gaya huruf italic
-                              ),
-                            ),
-                          ],
-                        ),
-                        onPressed: () {
-                          // Logika login
+                      child: InkWell(
+                        onTap: () {
+                          setState(() {
+                            selectedRole = 2;
+                          });
                         },
+                        child: Container(
+                          alignment: Alignment.center,
+                          child: Text(
+                            'Mentor',
+                            style: TextStyle(
+                              color: Color.fromARGB(255, 0, 0, 0),
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
                       ),
                     ),
                   ],
@@ -273,7 +264,12 @@ class LoginPage extends StatelessWidget {
                       ),
                     ),
                     onPressed: () {
-                      // Logika login
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => RegisterPage(),
+                        ),
+                      );
                     },
                   ),
                 ),
