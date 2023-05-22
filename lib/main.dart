@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'Screen/SplashScreen.dart';
-import 'Screen/PageQuiz2.dart';
+import 'Screen/LoginP/LoginPage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => SplashScreen(),
-        '/home': (context) => const Quiz2(),
+        '/home': (context) => LoginPage(),
       },
     );
   }

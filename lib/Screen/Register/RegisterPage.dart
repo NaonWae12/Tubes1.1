@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:unit3c_3/Screen/LoginP/LoginPage.dart';
 
 class RegisterPage extends StatelessWidget {
   @override
@@ -85,6 +86,82 @@ class RegisterPage extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 24.0),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Container(
+                      width: 150,
+                      height: 45,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: Color.fromARGB(255, 125, 123, 123),
+                      ),
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          primary: Colors
+                              .transparent, // Menghapus warna latar belakang ElevatedButton
+                          elevation: 0, // Menghapus bayangan ElevatedButton
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              'Participant',
+                              style: GoogleFonts.quicksand().copyWith(
+                                color: Colors
+                                    .white, // Mengubah warna teks menjadi putih
+                                fontSize: 16, // Mengubah ukuran font teks
+                                fontWeight: FontWeight
+                                    .bold, // Mengatur gaya huruf italic
+                              ),
+                            ),
+                          ],
+                        ),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => LoginPage(),
+                            ),
+                          );
+                        },
+                      ),
+                    ),
+                    Container(
+                      width: 150,
+                      height: 45,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: Color.fromARGB(255, 187, 184, 184),
+                      ),
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          primary: Colors
+                              .transparent, // Menghapus warna latar belakang ElevatedButton
+                          elevation: 0, // Menghapus bayangan ElevatedButton
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              'Mentor',
+                              style: GoogleFonts.quicksand().copyWith(
+                                color: Color.fromARGB(255, 50, 50,
+                                    50), // Mengubah warna teks menjadi putih
+                                fontSize: 16, // Mengubah ukuran font teks
+                                fontWeight: FontWeight
+                                    .bold, // Mengatur gaya huruf italic
+                              ),
+                            ),
+                          ],
+                        ),
+                        onPressed: () {
+                          // Logika login
+                        },
+                      ),
+                    ),
+                  ],
+                ),
                 Container(
                   width: 240,
                   height: 45,
@@ -180,7 +257,7 @@ class RegisterPage extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  height: 100,
+                  height: 40,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,

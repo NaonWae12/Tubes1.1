@@ -67,6 +67,85 @@ class LoginPage extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 24.0),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Container(
+                      width: 150,
+                      height: 45,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: Color.fromARGB(255, 125, 123, 123),
+                      ),
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          primary: Colors
+                              .transparent, // Menghapus warna latar belakang ElevatedButton
+                          elevation: 0, // Menghapus bayangan ElevatedButton
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              'Participant',
+                              style: GoogleFonts.quicksand().copyWith(
+                                color: Colors
+                                    .white, // Mengubah warna teks menjadi putih
+                                fontSize: 16, // Mengubah ukuran font teks
+                                fontWeight: FontWeight
+                                    .bold, // Mengatur gaya huruf italic
+                              ),
+                            ),
+                          ],
+                        ),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => RegisterPage(),
+                            ),
+                          );
+                        },
+                      ),
+                    ),
+                    Container(
+                      width: 150,
+                      height: 45,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: Color.fromARGB(255, 187, 184, 184),
+                      ),
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          primary: Colors
+                              .transparent, // Menghapus warna latar belakang ElevatedButton
+                          elevation: 0, // Menghapus bayangan ElevatedButton
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              'Mentor',
+                              style: GoogleFonts.quicksand().copyWith(
+                                color: Color.fromARGB(255, 50, 50,
+                                    50), // Mengubah warna teks menjadi putih
+                                fontSize: 16, // Mengubah ukuran font teks
+                                fontWeight: FontWeight
+                                    .bold, // Mengatur gaya huruf italic
+                              ),
+                            ),
+                          ],
+                        ),
+                        onPressed: () {
+                          // Logika login
+                        },
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 20,
+                ),
                 Container(
                   width: 240,
                   height: 45,
@@ -162,110 +241,42 @@ class LoginPage extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  height: 100,
+                  height: 60,
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Column(
-                      children: [
-                        Text(
-                          'New Participant?',
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              decoration: TextDecoration.underline),
-                        ),
-                        SizedBox(
-                          height: 7,
-                        ),
-                        Container(
-                          width: 150,
-                          height: 45,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            color: Color.fromARGB(255, 91, 89, 89),
-                          ),
-                          child: ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                              primary: Colors
-                                  .transparent, // Menghapus warna latar belakang ElevatedButton
-                              elevation: 0, // Menghapus bayangan ElevatedButton
-                            ),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text(
-                                  'Register',
-                                  style: GoogleFonts.quicksand().copyWith(
-                                    color: Colors
-                                        .white, // Mengubah warna teks menjadi putih
-                                    fontSize: 16, // Mengubah ukuran font teks
-                                    fontWeight: FontWeight
-                                        .bold, // Mengatur gaya huruf italic
-                                  ),
-                                ),
-                              ],
-                            ),
-                            onPressed: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => RegisterPage(),
-                                ),
-                              );
-                            },
-                          ),
-                        ),
-                      ],
+                Text(
+                  'New User ?',
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      decoration: TextDecoration.underline),
+                ),
+                Container(
+                  width: 240,
+                  height: 45,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: Color.fromARGB(255, 66, 62, 62),
+                  ),
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      primary: Colors
+                          .transparent, // Menghapus warna latar belakang ElevatedButton
+                      elevation: 0, // Menghapus bayangan ElevatedButton
                     ),
-                    Column(
-                      children: [
-                        Text(
-                          'Are you Mentor?',
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              decoration: TextDecoration.underline),
-                        ),
-                        SizedBox(
-                          height: 7,
-                        ),
-                        Container(
-                          width: 150,
-                          height: 45,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            color: Color.fromARGB(255, 187, 184, 184),
-                          ),
-                          child: ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                              primary: Colors
-                                  .transparent, // Menghapus warna latar belakang ElevatedButton
-                              elevation: 0, // Menghapus bayangan ElevatedButton
-                            ),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text(
-                                  'Login',
-                                  style: GoogleFonts.quicksand().copyWith(
-                                    color: Color.fromARGB(255, 50, 50,
-                                        50), // Mengubah warna teks menjadi putih
-                                    fontSize: 16, // Mengubah ukuran font teks
-                                    fontWeight: FontWeight
-                                        .bold, // Mengatur gaya huruf italic
-                                  ),
-                                ),
-                              ],
-                            ),
-                            onPressed: () {
-                              // Logika login
-                            },
-                          ),
-                        ),
-                      ],
+                    child: Text(
+                      'Register',
+                      style: GoogleFonts.quicksand().copyWith(
+                        color:
+                            Colors.white, // Mengubah warna teks menjadi putih
+                        fontSize: 16, // Mengubah ukuran font teks
+                        fontWeight:
+                            FontWeight.bold, // Mengatur gaya huruf italic
+                      ),
                     ),
-                  ],
-                )
+                    onPressed: () {
+                      // Logika login
+                    },
+                  ),
+                ),
               ],
             ),
           ),
