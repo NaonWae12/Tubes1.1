@@ -5,6 +5,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'home.dart';
 
 class Carousel extends StatefulWidget {
+  const Carousel({super.key});
+
   @override
   _CarouselState createState() => _CarouselState();
 }
@@ -38,7 +40,7 @@ class _CarouselState extends State<Carousel> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => Homepage(),
+                    builder: (context) => const Homepage(),
                   ),
                 );
               },
@@ -50,11 +52,11 @@ class _CarouselState extends State<Carousel> {
                   color: const Color.fromARGB(255, 222, 174, 100),
                   boxShadow: [
                     BoxShadow(
-                      color:
-                          Color.fromARGB(255, 117, 116, 116).withOpacity(0.5),
+                      color: const Color.fromARGB(255, 117, 116, 116)
+                          .withOpacity(0.5),
                       spreadRadius: 4,
                       blurRadius: 5,
-                      offset: Offset(0, 3),
+                      offset: const Offset(0, 3),
                     ),
                   ],
                 ),
@@ -76,19 +78,19 @@ class _CarouselState extends State<Carousel> {
                             Text(
                               carouselItems[index].title,
                               style: GoogleFonts.quicksand(
-                                textStyle: TextStyle(
+                                textStyle: const TextStyle(
                                   fontWeight: FontWeight.bold,
                                   fontSize: 21,
                                   color: Colors.white,
                                 ),
                               ),
                             ),
-                            SizedBox(height: 5),
+                            const SizedBox(height: 5),
                             Flexible(
                               child: Text(
                                 carouselItems[index].description,
                                 style: GoogleFonts.quicksand(
-                                  textStyle: TextStyle(
+                                  textStyle: const TextStyle(
                                     fontSize: 10,
                                     color: Colors.white,
                                   ),
@@ -97,17 +99,17 @@ class _CarouselState extends State<Carousel> {
                                 overflow: TextOverflow.ellipsis,
                               ),
                             ),
-                            SizedBox(height: 10),
+                            const SizedBox(height: 10),
                             Text(
                               '${carouselItems[index].level} . ${carouselItems[index].registered}',
                               style: GoogleFonts.quicksand(
-                                textStyle: TextStyle(
+                                textStyle: const TextStyle(
                                   fontSize: 10,
                                   color: Colors.white,
                                 ),
                               ),
                             ),
-                            SizedBox(height: 10),
+                            const SizedBox(height: 10),
                             Row(
                               children: [
                                 RatingBar.builder(

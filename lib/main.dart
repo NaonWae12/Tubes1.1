@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'Screen/SplashScreen.dart';
-import 'Screen/PagesClass.dart';
+import 'Screen/PageQuiz2.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -18,7 +20,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => SplashScreen(),
-        '/home': (context) => PageClass(),
+        '/home': (context) => const Quiz2(),
       },
     );
   }

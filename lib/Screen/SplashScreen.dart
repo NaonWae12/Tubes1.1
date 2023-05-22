@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {
+  const SplashScreen({super.key});
+
   @override
   _SplashScreenState createState() => _SplashScreenState();
 }
@@ -10,7 +12,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     // Delay selama 3 detik, lalu pindah ke halaman utama
-    Future.delayed(Duration(seconds: 3), () {
+    Future.delayed(const Duration(seconds: 3), () {
       Navigator.pushReplacementNamed(context, '/home');
     });
   }
@@ -19,11 +21,11 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           gradient: LinearGradient(
             colors: [
               Color.fromARGB(255, 73, 75, 77),
-              const Color.fromARGB(255, 217, 222, 217)
+              Color.fromARGB(255, 217, 222, 217)
             ], // Warna-warna gradient yang diinginkan
             begin: Alignment.topCenter,
             end: Alignment.bottomRight,
@@ -34,7 +36,7 @@ class _SplashScreenState extends State<SplashScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Image.asset('assets/Unit 3c.png'),
-              Text(
+              const Text(
                 'Computing Certification Center',
                 style: TextStyle(color: Colors.white, fontSize: 13),
               )

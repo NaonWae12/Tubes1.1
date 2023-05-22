@@ -12,10 +12,15 @@ class PageClass extends StatefulWidget {
 }
 
 class _HomepageState extends State<PageClass> {
-  List<String> judulItems = [
-    'Judul Item A',
-    'Judul Item B',
-    'Judul Item C',
+  List<Reward> rewards = [
+    Reward(
+      title: 'Level Beginner',
+      image: 'assets/penanda.png',
+    ),
+    Reward(
+      title: 'Level Mahir',
+      image: 'assets/penanda.png',
+    ),
   ];
   @override
   Widget build(BuildContext context) {
@@ -147,7 +152,7 @@ class _HomepageState extends State<PageClass> {
                         children: [
                           ListView.builder(
                             shrinkWrap: true,
-                            itemCount: judulItems.length,
+                            itemCount: rewards.length,
                             itemBuilder: (BuildContext context, int index) {
                               return InkWell(
                                 onTap: () {
@@ -179,10 +184,25 @@ class _HomepageState extends State<PageClass> {
                                 child: Column(
                                   children: [
                                     ListTile(
-                                      title: Text(
-                                          '${index + 1}. ${judulItems[index]}'),
+                                      title: Row(
+                                        children: [
+                                          Text(
+                                              '${index + 1}. ${rewards[index].title}'),
+                                          SizedBox(
+                                              width:
+                                                  10), // Jarak antara judul dan gambar
+                                          Expanded(
+                                            child: Container(
+                                              alignment: Alignment.centerRight,
+                                              width: 40,
+                                              height: 40,
+                                              child: Image.asset(
+                                                  rewards[index].image),
+                                            ),
+                                          )
+                                        ],
+                                      ),
                                     ),
-                                    Divider(),
                                   ],
                                 ),
                               );
@@ -196,4 +216,14 @@ class _HomepageState extends State<PageClass> {
       ),
     );
   }
+}
+
+class Reward {
+  final String title;
+  final String image;
+
+  Reward({
+    required this.title,
+    required this.image,
+  });
 }
