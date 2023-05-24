@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../Login/LoginPage.dart';
 import 'CategoryPage.dart';
 import 'ChartPage.dart';
 import 'PageOtp.dart';
@@ -81,20 +82,31 @@ class _ProfileState extends State<Profile> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
-                        Container(
-                          width: 80,
-                          height: 45,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(12),
-                            color: Colors.grey,
-                          ),
-                          child: Center(
-                            child: Text(
-                              'Logout',
-                              style: GoogleFonts.quicksand(
-                                textStyle: TextStyle(
-                                  fontSize: 18,
-                                  color: const Color.fromARGB(255, 31, 30, 30),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => LoginPage(),
+                              ),
+                            );
+                          },
+                          child: Container(
+                            width: 80,
+                            height: 45,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(12),
+                              color: Colors.grey,
+                            ),
+                            child: Center(
+                              child: Text(
+                                'Logout',
+                                style: GoogleFonts.quicksand(
+                                  textStyle: TextStyle(
+                                    fontSize: 18,
+                                    color:
+                                        const Color.fromARGB(255, 31, 30, 30),
+                                  ),
                                 ),
                               ),
                             ),

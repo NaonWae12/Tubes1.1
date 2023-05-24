@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'Screen/SplashScreen.dart';
-import 'Screen/LoginP/LoginPage.dart';
+// import 'package:unit3c_3/Screen/Home/Participant/home.dart';
+import 'Screen/Participant/SplashScreen.dart';
+// import 'Screen/Login/LoginPage.dart';
+import 'Screen/Participant/PageProgres.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,14 +15,14 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Splash Screen',
+      title: 'Unit 3C',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
       initialRoute: '/',
       routes: {
         '/': (context) => SplashScreen(),
-        '/home': (context) => LoginPage(),
+        '/home': (context) => Progres(),
       },
     );
   }

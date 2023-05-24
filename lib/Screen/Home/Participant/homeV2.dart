@@ -2,10 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:unit3c_3/Screen/CategoryPage.dart';
-import 'package:unit3c_3/Screen/ChartPage.dart';
-import 'package:unit3c_3/Screen/NotificationPage.dart';
-import 'package:unit3c_3/Screen/ProfilePage.dart';
+import '../../Participant/ChartPage.dart';
+import '../../Participant/Pembayaran.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({Key? key}) : super(key: key);
@@ -16,20 +14,6 @@ class Homepage extends StatefulWidget {
 
 class _HomepageState extends State<Homepage> {
   double _rating = 1.0;
-  int _selectedIndex = 0;
-
-  static List<Widget> _widgetOptions = <Widget>[
-    Homepage(),
-    CategoryPage(),
-    ChartPage(),
-    NotivicationPage(),
-    Profile(),
-  ];
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
 
   List<Recommendation> recommendations = [
     Recommendation(
@@ -294,13 +278,21 @@ class _HomepageState extends State<Homepage> {
                 itemBuilder: (context, index) {
                   return GestureDetector(
                     onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => DetailPage(
-                              recommendation: recommendations[index]),
-                        ),
-                      );
+                      // Navigasi ke halaman yang diinginkan sesuai dengan indeks item
+                      if (index == 0) {
+                        // Navigasi ke halaman Profile
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => Paid()),
+                        );
+                      } else if (index == 1) {
+                        // Navigasi ke halaman Akun
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => ChartPage()),
+                        );
+                      }
+                      // Tambahkan penanganan navigasi untuk item lainnya sesuai kebutuhan
                     },
                     child: buildRecommendationItem(recommendations[index]),
                   );
@@ -309,36 +301,6 @@ class _HomepageState extends State<Homepage> {
             ],
           ),
         ],
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home, color: Colors.black),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.search, color: Colors.black),
-            label: 'Search',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person, color: Colors.black),
-            label: 'Profile',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.shopping_cart, color: Colors.black),
-            label: 'Cart',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.settings,
-              color: Colors.black,
-            ),
-            label: 'Settings',
-          ),
-        ],
-        currentIndex: _selectedIndex,
-        selectedItemColor: Colors.amber[800],
-        onTap: _onItemTapped,
       ),
     );
   }

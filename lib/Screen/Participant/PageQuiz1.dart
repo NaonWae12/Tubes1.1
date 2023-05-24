@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'PageQuiz3.dart';
 
-class Quiz2 extends StatefulWidget {
-  const Quiz2({super.key});
+class Quiz1 extends StatefulWidget {
+  const Quiz1({super.key});
 
   @override
-  State<Quiz2> createState() => _ModulState();
+  State<Quiz1> createState() => _ModulState();
 }
 
-class _ModulState extends State<Quiz2> {
+class _ModulState extends State<Quiz1> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,8 +21,13 @@ class _ModulState extends State<Quiz2> {
               Row(children: [
                 Padding(
                   padding: const EdgeInsets.only(left: 15, top: 20),
-                  child: Container(
-                    child: Image.asset('assets/Left.png'),
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.pop(context); // Kembali ke halaman sebelumnya
+                    },
+                    child: Container(
+                      child: Image.asset('assets/Left.png'),
+                    ),
                   ),
                 ),
                 Expanded(
@@ -51,7 +57,7 @@ class _ModulState extends State<Quiz2> {
                 child: Align(
                   alignment: Alignment.topLeft,
                   child: Text(
-                    'Quiz - Java Dasar',
+                    'Quiz',
                     style: GoogleFonts.quicksand(
                       textStyle: TextStyle(
                         fontSize: 18,
@@ -101,7 +107,10 @@ class _ModulState extends State<Quiz2> {
                   alignment: Alignment.centerRight,
                   child: GestureDetector(
                     onTap: () {
-                      // Fungsi yang akan dijalankan saat container "Start" di klik
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Quiz3()),
+                      );
                     },
                     child: Padding(
                       padding: const EdgeInsets.only(

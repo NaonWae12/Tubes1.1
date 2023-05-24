@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:unit3c_3/Screen/Register/RegisterPage.dart';
+import '../Participant/Navigator.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -22,13 +23,6 @@ class _LoginPageState extends State<LoginPage> {
                 padding: EdgeInsets.only(top: 80, bottom: 50),
                 child: Image.asset('assets/Unit 3c2.png')),
           ),
-          Container(
-              padding: EdgeInsets.only(left: 20),
-              alignment: Alignment.centerLeft,
-              child: Text(
-                'Login Participant',
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-              )),
           Container(
             padding: EdgeInsets.all(16.0),
             child: Column(
@@ -161,7 +155,12 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                     ),
                     onPressed: () {
-                      // Logika login
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => Nyoba(),
+                        ),
+                      );
                     },
                   ),
                 ),

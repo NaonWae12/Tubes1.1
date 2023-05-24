@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'CategoryPage.dart';
+import 'ModulePage.dart';
+import 'Navigator.dart';
 import 'ChartPage.dart';
 import 'PageOtp.dart';
 
@@ -33,8 +34,16 @@ class _HomepageState extends State<PageClass> {
               Row(children: [
                 Padding(
                   padding: const EdgeInsets.only(left: 15, top: 20),
-                  child: Container(
-                    child: Image.asset('assets/VHome.png'),
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(builder: (context) => Nyoba()),
+                      );
+                    },
+                    child: Container(
+                      child: Image.asset('assets/VHome.png'),
+                    ),
                   ),
                 ),
                 Expanded(
@@ -162,7 +171,7 @@ class _HomepageState extends State<PageClass> {
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                          builder: (context) => CategoryPage()),
+                                          builder: (context) => Modul()),
                                     );
                                   } else if (index == 1) {
                                     // Navigasi ke halaman Akun

@@ -2,7 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-// import 'package:unit3c_3/Screen/LoginP/LoginPage.dart';
+import '../Login/LoginPage.dart';
 
 class RegisterPage extends StatefulWidget {
   @override
@@ -164,25 +164,29 @@ class _RegisterPageState extends State<RegisterPage> {
                     color: Color.fromARGB(255, 66, 62, 62),
                   ),
                   child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      primary: Colors
-                          .transparent, // Menghapus warna latar belakang ElevatedButton
-                      elevation: 0, // Menghapus bayangan ElevatedButton
-                    ),
-                    child: Text(
-                      'Create Account',
-                      style: GoogleFonts.quicksand().copyWith(
-                        color:
-                            Colors.white, // Mengubah warna teks menjadi putih
-                        fontSize: 16, // Mengubah ukuran font teks
-                        fontWeight:
-                            FontWeight.bold, // Mengatur gaya huruf italic
+                      style: ElevatedButton.styleFrom(
+                        primary: Colors
+                            .transparent, // Menghapus warna latar belakang ElevatedButton
+                        elevation: 0, // Menghapus bayangan ElevatedButton
                       ),
-                    ),
-                    onPressed: () {
-                      // Logika login
-                    },
-                  ),
+                      child: Text(
+                        'Create Account',
+                        style: GoogleFonts.quicksand().copyWith(
+                          color:
+                              Colors.white, // Mengubah warna teks menjadi putih
+                          fontSize: 16, // Mengubah ukuran font teks
+                          fontWeight:
+                              FontWeight.bold, // Mengatur gaya huruf italic
+                        ),
+                      ),
+                      onPressed: () {
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => LoginPage(),
+                          ),
+                        );
+                      }),
                 ),
                 SizedBox(height: 16),
                 Row(
@@ -296,7 +300,12 @@ class _RegisterPageState extends State<RegisterPage> {
                               ],
                             ),
                             onPressed: () {
-                              // Logika login
+                              Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => LoginPage(),
+                                ),
+                              );
                             },
                           ),
                         ),

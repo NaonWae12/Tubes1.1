@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'Navigator.dart';
 
 class OtpPage extends StatelessWidget {
   @override
@@ -67,25 +68,29 @@ class OtpPage extends StatelessWidget {
                     color: Color.fromARGB(255, 66, 62, 62),
                   ),
                   child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      primary: Colors
-                          .transparent, // Menghapus warna latar belakang ElevatedButton
-                      elevation: 0, // Menghapus bayangan ElevatedButton
-                    ),
-                    child: Text(
-                      'Verify',
-                      style: GoogleFonts.quicksand().copyWith(
-                        color:
-                            Colors.white, // Mengubah warna teks menjadi putih
-                        fontSize: 16, // Mengubah ukuran font teks
-                        fontWeight:
-                            FontWeight.bold, // Mengatur gaya huruf italic
+                      style: ElevatedButton.styleFrom(
+                        primary: Colors
+                            .transparent, // Menghapus warna latar belakang ElevatedButton
+                        elevation: 0, // Menghapus bayangan ElevatedButton
                       ),
-                    ),
-                    onPressed: () {
-                      // Logika login
-                    },
-                  ),
+                      child: Text(
+                        'Verify',
+                        style: GoogleFonts.quicksand().copyWith(
+                          color:
+                              Colors.white, // Mengubah warna teks menjadi putih
+                          fontSize: 16, // Mengubah ukuran font teks
+                          fontWeight:
+                              FontWeight.bold, // Mengatur gaya huruf italic
+                        ),
+                      ),
+                      onPressed: () {
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => Nyoba(),
+                          ),
+                        );
+                      }),
                 ),
               ],
             ),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'Home/HomeSlider.dart';
+import '../Home/Participant/HomeSlider.dart';
 
 class CategoryPage extends StatefulWidget {
   const CategoryPage({Key? key}) : super(key: key);

@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'PagesClass.dart';
+import 'ChartPage.dart';
+import 'PageOtp.dart';
 
 class Progres extends StatefulWidget {
   const Progres({Key? key}) : super(key: key);
@@ -84,16 +87,30 @@ class _HomepageState extends State<Progres> {
                 shrinkWrap: true,
                 physics: NeverScrollableScrollPhysics(),
                 itemCount: recommendations.length,
-                itemBuilder: (context, index) {
-                  return GestureDetector(
+                itemBuilder: (BuildContext context, int index) {
+                  return InkWell(
                     onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => DetailPage(
-                              recommendation: recommendations[index]),
-                        ),
-                      );
+                      // Navigasi ke halaman yang diinginkan sesuai dengan indeks item
+                      if (index == 0) {
+                        // Navigasi ke halaman Profile
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => PageClass()),
+                        );
+                      } else if (index == 1) {
+                        // Navigasi ke halaman Akun
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => ChartPage()),
+                        );
+                      } else if (index == 2) {
+                        // Navigasi ke halaman Ubah Password
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => OtpPage()),
+                        );
+                      }
+                      // Tambahkan penanganan navigasi untuk item lainnya sesuai kebutuhan
                     },
                     child: buildRecommendationItem(recommendations[index]),
                   );

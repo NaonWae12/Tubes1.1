@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'finalQuiz.dart';
 
-class Quiz1 extends StatefulWidget {
-  const Quiz1({super.key});
+class Quiz3 extends StatefulWidget {
+  const Quiz3({super.key});
 
   @override
-  State<Quiz1> createState() => _ModulState();
+  State<Quiz3> createState() => _ModulState();
 }
 
-class _ModulState extends State<Quiz1> {
+class _ModulState extends State<Quiz3> {
+  int? selectedValue;
+  List<String> options = ['Pilihan 1', 'Pilihan 2', 'Pilihan 3'];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,8 +23,13 @@ class _ModulState extends State<Quiz1> {
               Row(children: [
                 Padding(
                   padding: const EdgeInsets.only(left: 15, top: 20),
-                  child: Container(
-                    child: Image.asset('assets/Left.png'),
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.pop(context); // Kembali ke halaman sebelumnya
+                    },
+                    child: Container(
+                      child: Image.asset('assets/Left.png'),
+                    ),
                   ),
                 ),
                 Expanded(
@@ -51,7 +59,7 @@ class _ModulState extends State<Quiz1> {
                 child: Align(
                   alignment: Alignment.topLeft,
                   child: Text(
-                    'Quiz',
+                    'Quiz - Java Dasar',
                     style: GoogleFonts.quicksand(
                       textStyle: TextStyle(
                         fontSize: 18,
@@ -67,7 +75,7 @@ class _ModulState extends State<Quiz1> {
                     left: 25, top: 10, right: 25, bottom: 10),
                 child: Container(
                   width: double.infinity,
-                  height: 200,
+                  height: 500,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
                     color: Colors.white,
@@ -81,17 +89,64 @@ class _ModulState extends State<Quiz1> {
                       ),
                     ],
                   ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(
-                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-                      style: GoogleFonts.quicksand(
-                        textStyle: TextStyle(
-                          fontSize: 13,
-                          color: const Color.fromARGB(255, 31, 30, 30),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          'Question - 1 of 1',
+                          style: GoogleFonts.quicksand(
+                            textStyle: TextStyle(
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold,
+                              color: const Color.fromARGB(255, 31, 30, 30),
+                            ),
+                          ),
                         ),
                       ),
-                    ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          'Komentar pada program dalam Java dapat menggunakan perintah…',
+                          style: GoogleFonts.quicksand(
+                            textStyle: TextStyle(
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold,
+                              color: const Color.fromARGB(255, 31, 30, 30),
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      ListView.builder(
+                        shrinkWrap: true,
+                        itemCount: options.length,
+                        itemBuilder: (BuildContext context, int index) {
+                          return RadioListTile(
+                            value: index,
+                            groupValue: selectedValue,
+                            title: Text(
+                              options[index],
+                              style: GoogleFonts.quicksand(
+                                textStyle: TextStyle(
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.bold,
+                                  color: const Color.fromARGB(255, 31, 30, 30),
+                                ),
+                              ),
+                            ),
+                            onChanged: (value) {
+                              setState(() {
+                                selectedValue = value as int?;
+                              });
+                            },
+                          );
+                        },
+                      ),
+                    ],
                   ),
                 ),
               ),
@@ -101,7 +156,10 @@ class _ModulState extends State<Quiz1> {
                   alignment: Alignment.centerRight,
                   child: GestureDetector(
                     onTap: () {
-                      // Fungsi yang akan dijalankan saat container "Start" di klik
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => FinalQuiz()),
+                      );
                     },
                     child: Padding(
                       padding: const EdgeInsets.only(
@@ -127,7 +185,7 @@ class _ModulState extends State<Quiz1> {
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Text(
-                            'Start',
+                            'Submit',
                             style: GoogleFonts.quicksand(
                               textStyle: TextStyle(
                                 fontSize: 20,
