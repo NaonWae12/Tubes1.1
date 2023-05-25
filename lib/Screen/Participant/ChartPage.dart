@@ -94,6 +94,10 @@ class _HomepageState extends State<ChartPage> {
                   );
                 },
               ),
+              SizedBox(
+                height: 170,
+              ),
+              builCheckout()
             ],
           ),
         ],
@@ -221,6 +225,92 @@ class _HomepageState extends State<ChartPage> {
       ),
     );
   }
+}
+
+Widget builCheckout() {
+  return Container(
+    alignment: Alignment.bottomCenter,
+    width: 400,
+    height: 50,
+    decoration: BoxDecoration(
+      borderRadius: BorderRadius.circular(10),
+      boxShadow: [
+        BoxShadow(
+          color: Color.fromARGB(255, 97, 96, 96).withOpacity(0.5),
+          spreadRadius: 1,
+          blurRadius: 5,
+          offset: Offset(3, 3),
+        ),
+      ],
+    ),
+    child: Row(
+      children: [
+        Container(
+          width: 250,
+          height: 50,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(10), bottomLeft: Radius.circular(10)),
+            color: Color.fromARGB(255, 209, 209, 207),
+          ),
+          child: Row(
+            children: [
+              Padding(
+                  padding: const EdgeInsets.only(left: 15),
+                  child: Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      "Total :",
+                      style: GoogleFonts.quicksand(
+                        textStyle: TextStyle(
+                          fontSize: 13,
+                          color: Color.fromARGB(255, 57, 57, 57),
+                        ),
+                      ),
+                    ),
+                  )),
+              Align(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  " Rp.99.000",
+                  style: GoogleFonts.quicksand(
+                    textStyle: TextStyle(
+                        fontSize: 13,
+                        color: Color.fromARGB(255, 57, 57, 57),
+                        fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+        Container(
+          width: 150,
+          height: 50,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.only(
+                bottomRight: Radius.circular(10),
+                topRight: Radius.circular(10)),
+            color: Color.fromARGB(255, 247, 247, 242),
+          ),
+          child: Padding(
+              padding: const EdgeInsets.only(left: 15),
+              child: Align(
+                alignment: Alignment.center,
+                child: Text(
+                  "Checkout",
+                  style: GoogleFonts.quicksand(
+                    textStyle: TextStyle(
+                        fontSize: 13,
+                        color: Color.fromARGB(255, 57, 57, 57),
+                        fontWeight: FontWeight.bold),
+                  ),
+                ),
+              )),
+        ),
+      ],
+    ),
+  );
 }
 
 class Recommendation {

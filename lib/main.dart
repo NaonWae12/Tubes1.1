@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-// import 'package:unit3c_3/Screen/Home/Participant/home.dart';
 import 'Screen/Participant/SplashScreen.dart';
 // import 'Screen/Login/LoginPage.dart';
-import 'Screen/Participant/PageProgres.dart';
+import 'Screen/Mentor/AddClass.dart';
 
 void main() {
   runApp(const MyApp());
@@ -22,7 +21,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => SplashScreen(),
-        '/home': (context) => Progres(),
+        '/home': (context) => AddClass(),
       },
     );
   }

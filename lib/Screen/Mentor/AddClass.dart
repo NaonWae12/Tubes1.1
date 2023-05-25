@@ -3,14 +3,14 @@ import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 
-class EditClass extends StatefulWidget {
-  const EditClass({super.key});
+class AddClass extends StatefulWidget {
+  const AddClass({super.key});
 
   @override
-  State<EditClass> createState() => _ModulState();
+  State<AddClass> createState() => _ModulState();
 }
 
-class _ModulState extends State<EditClass> {
+class _ModulState extends State<AddClass> {
   String selectedValue = 'Option 1';
   List<String> options = ['Option 1', 'Option 2', 'Option 3', 'Option 4'];
 
@@ -26,17 +26,6 @@ class _ModulState extends State<EditClass> {
           Column(
             children: <Widget>[
               Row(children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: 15, top: 20),
-                  child: GestureDetector(
-                    onTap: () {
-                      Navigator.pop(context); // Kembali ke halaman sebelumnya
-                    },
-                    child: Container(
-                      child: Image.asset('assets/Left.png'),
-                    ),
-                  ),
-                ),
                 Expanded(
                   child: Padding(
                     padding: const EdgeInsets.only(bottom: 35),
@@ -46,7 +35,7 @@ class _ModulState extends State<EditClass> {
                       ),
                       alignment: Alignment.center,
                       child: Text(
-                        'Edit Class',
+                        'Add Class',
                         style: GoogleFonts.quicksand(
                           textStyle: TextStyle(
                             fontWeight: FontWeight.bold,
@@ -532,7 +521,7 @@ class _ModulState extends State<EditClass> {
                               );
                             },
                             child: Text(
-                              'Edit Class',
+                              'Add Class',
                               style: GoogleFonts.quicksand(
                                 textStyle: TextStyle(
                                   fontSize: 20,
