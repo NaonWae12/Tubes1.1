@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import '../../Mentor/EditClass.dart';
+import 'EditClass.dart';
 
-class Paid extends StatefulWidget {
-  const Paid({Key? key}) : super(key: key);
+class MyClass extends StatefulWidget {
+  const MyClass({Key? key}) : super(key: key);
 
   @override
   _HomepageState createState() => _HomepageState();
 }
 
-class _HomepageState extends State<Paid> {
+class _HomepageState extends State<MyClass> {
   double _rating = 3.0;
 
   List<Map<String, String>> containerContents = [

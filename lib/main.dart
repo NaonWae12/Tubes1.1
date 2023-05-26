@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'Screen/Participant/SplashScreen.dart';
 // import 'Screen/Login/LoginPage.dart';
-import 'Screen/Mentor/AddClass.dart';
+import 'Screen/Participant/Navigator.dart';
 
 void main() {
   runApp(const MyApp());
@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => SplashScreen(),
-        '/home': (context) => AddClass(),
+        '/home': (context) => Nyoba(),
       },
     );
   }
